@@ -1,0 +1,7 @@
+# Python build artifacts
+__pycache__/
+*.py[cod]
+
+# Legacy/obsolete generated assets (the canonical CV is Muhammad_Renaldy_Baskara_CV.pdf)
+Renaldy_Baskara_CV.pdf
+assets/bri-logo.jpg
