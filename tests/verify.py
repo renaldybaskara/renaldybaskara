@@ -40,9 +40,18 @@ for section_id in ("about", "experience", "projects", "skills", "contact"):
 
 linkedin = "https://www.linkedin.com/in/mrenaldybaskara?trk=contact-info"
 upwork = "https://www.upwork.com/freelancers/~01356ddc4dbcc68cb0?companyReference=2062589248382688414&mp_source=share"
+email = "mailto:renaldybaskara6@gmail.com"
+whatsapp = "https://wa.me/6281272103353"
+instagram = "https://www.instagram.com/renaldybaskara?igsh=ZHhtNmtpYXdxajly&utm_source=qr"
 hrefs = [link.get("href", "") for link in parser.links]
 require(linkedin in hrefs, "exact LinkedIn link")
 require(upwork in hrefs, "exact Upwork link")
+require(email in hrefs, "exact email link")
+require(whatsapp in hrefs, "exact WhatsApp link")
+require(instagram in hrefs, "exact Instagram link")
+require("Email me" in html, "email contact label")
+require("Message on WhatsApp" in html, "WhatsApp contact label")
+require("Instagram" in html, "Instagram contact label")
 require("April 2024" in html and "Present" in html, "current role dates")
 require("April 2021" in html and "April 2024" in html, "prior role dates")
 require("part-time" in html.lower() and "full-time" in html.lower() and "remote" in html.lower(), "availability message")
@@ -67,9 +76,10 @@ except json.JSONDecodeError:
 require(person.get("@type") == "Person", "JSON-LD Person type")
 require(person.get("name") == full_name, "JSON-LD full name")
 require(person.get("url") == canonical, "JSON-LD canonical URL")
-require(person.get("sameAs") == [linkedin, upwork], "JSON-LD exact public profiles")
+require(person.get("sameAs") == [linkedin, upwork, email, whatsapp, instagram], "JSON-LD exact public profiles and contact links")
 require(person.get("worksFor", {}).get("name") == "Bank Rakyat Indonesia", "JSON-LD current employer")
-require(not re.search(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}", html), "no invented email")
+emails = re.findall(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}", html)
+require(set(emails) == {"renaldybaskara6@gmail.com"}, "only supplied email is used")
 visible_html = re.sub(r'<script\b[^>]*>.*?</script>', ' ', html, flags=re.S)
 visible_html = re.sub(r'<[^>]+>', ' ', visible_html)
 require(not re.search(r"(?:\+?\d[\s().-]*){8,}", re.sub(r"200,000\+?", "", visible_html)), "no invented phone number")
