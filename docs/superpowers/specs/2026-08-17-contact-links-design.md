@@ -8,7 +8,7 @@ Make the portfolio's email, WhatsApp, and Instagram contact actions open the cor
 
 The existing contact section remains the single contact entry point. Add three buttons using native anchors:
 
-- Email uses `mailto:renaldybaskara6@gmail.com`.
+- Email uses `mailto:renaldybaskara8@gmail.com`.
 - WhatsApp uses `https://wa.me/6281272103353`, which opens a direct chat using the international phone format without punctuation.
 - Instagram uses the user-provided profile URL and opens in a new tab with `rel="noopener noreferrer"`.
 

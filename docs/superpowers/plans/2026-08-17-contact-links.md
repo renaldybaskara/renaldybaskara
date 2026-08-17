@@ -10,7 +10,7 @@
 
 ## Global Constraints
 
-- Use the exact email `renaldybaskara6@gmail.com`.
+- Use the exact email `renaldybaskara8@gmail.com`.
 - Use the WhatsApp direct-chat URL `https://wa.me/6281272103353`.
 - Use the supplied Instagram URL `https://www.instagram.com/renaldybaskara?igsh=ZHhtNmtpYXdxajly&utm_source=qr`.
 - Preserve existing LinkedIn and Upwork links and the current visual styling.
@@ -32,7 +32,7 @@
 Add these values next to the existing `linkedin` and `upwork` constants, then assert each exact href is present in `hrefs` and each label appears in the HTML:
 
 ```python
-email = "mailto:renaldybaskara6@gmail.com"
+email = "mailto:renaldybaskara8@gmail.com"
 whatsapp = "https://wa.me/6281272103353"
 instagram = "https://www.instagram.com/renaldybaskara?igsh=ZHhtNmtpYXdxajly&utm_source=qr"
 require(email in hrefs, "exact email link")
@@ -72,7 +72,7 @@ Expected: `VERIFICATION FAILED` with failures for the exact email, WhatsApp, and
 Set the JSON-LD `sameAs` value to:
 
 ```json
-["https://www.linkedin.com/in/mrenaldybaskara?trk=contact-info","https://www.upwork.com/freelancers/~01356ddc4dbcc68cb0?companyReference=2062589248382688414&mp_source=share","mailto:renaldybaskara6@gmail.com","https://wa.me/6281272103353","https://www.instagram.com/renaldybaskara?igsh=ZHhtNmtpYXdxajly&utm_source=qr"]
+["https://www.linkedin.com/in/mrenaldybaskara?trk=contact-info","https://www.upwork.com/freelancers/~01356ddc4dbcc68cb0?companyReference=2062589248382688414&mp_source=share","mailto:renaldybaskara8@gmail.com","https://wa.me/6281272103353","https://www.instagram.com/renaldybaskara?igsh=ZHhtNmtpYXdxajly&utm_source=qr"]
 ```
 
 - [ ] **Step 2: Add the three contact anchors**
@@ -80,7 +80,7 @@ Set the JSON-LD `sameAs` value to:
 Add these anchors inside `.contact-actions` after the existing Upwork anchor:
 
 ```html
-<a class="button button-secondary" href="mailto:renaldybaskara6@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+<a class="button button-secondary" href="mailto:renaldybaskara8@gmail.com">Email me <span aria-hidden="true">↗</span></a>
 <a class="button button-secondary" href="https://wa.me/6281272103353" target="_blank" rel="noopener noreferrer">Message on WhatsApp <span aria-hidden="true">↗</span></a>
 <a class="button button-secondary" href="https://www.instagram.com/renaldybaskara?igsh=ZHhtNmtpYXdxajly&amp;utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
 ```

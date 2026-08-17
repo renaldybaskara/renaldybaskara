@@ -40,7 +40,7 @@ for section_id in ("about", "experience", "projects", "skills", "contact"):
 
 linkedin = "https://www.linkedin.com/in/mrenaldybaskara?trk=contact-info"
 upwork = "https://www.upwork.com/freelancers/~01356ddc4dbcc68cb0?companyReference=2062589248382688414&mp_source=share"
-email = "mailto:renaldybaskara6@gmail.com"
+email = "mailto:renaldybaskara8@gmail.com"
 whatsapp = "https://wa.me/6281272103353"
 instagram = "https://www.instagram.com/renaldybaskara?igsh=ZHhtNmtpYXdxajly&utm_source=qr"
 hrefs = [link.get("href", "") for link in parser.links]
@@ -79,7 +79,7 @@ require(person.get("url") == canonical, "JSON-LD canonical URL")
 require(person.get("sameAs") == [linkedin, upwork, email, whatsapp, instagram], "JSON-LD exact public profiles and contact links")
 require(person.get("worksFor", {}).get("name") == "Bank Rakyat Indonesia", "JSON-LD current employer")
 emails = re.findall(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}", html)
-require(set(emails) == {"renaldybaskara6@gmail.com"}, "only supplied email is used")
+require(set(emails) == {"renaldybaskara8@gmail.com"}, "only supplied email is used")
 visible_html = re.sub(r'<script\b[^>]*>.*?</script>', ' ', html, flags=re.S)
 visible_html = re.sub(r'<[^>]+>', ' ', visible_html)
 require(not re.search(r"(?:\+?\d[\s().-]*){8,}", re.sub(r"200,000\+?", "", visible_html)), "no invented phone number")
