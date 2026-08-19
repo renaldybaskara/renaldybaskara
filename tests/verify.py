@@ -87,7 +87,11 @@ for image in parser.images:
     require(bool(image.get("alt")), "all images have non-empty alt text")
 image_sources = [image.get("src") for image in parser.images]
 require(image_sources.count("assets/bri-logo-full.jpg") == 2, "BRI logo appears for both BRI roles")
-require("assets/edc-merchant-payment.jpg" not in image_sources and "assets/wpe-echannel-logo.jpg" not in image_sources, "EDC and WPE project images are omitted")
+require(image_sources.count("assets/edc-merchant-payment.png") == 1, "EDC project image appears once")
+require(image_sources.count("assets/famledger-financial-management.png") == 1, "FamLedger project image appears once")
+require("assets/wpe-echannel-logo.jpg" not in image_sources, "unapproved WPE project image is omitted")
+require((ROOT / "assets/edc-merchant-payment.png").exists(), "EDC project image asset exists")
+require((ROOT / "assets/famledger-financial-management.png").exists(), "FamLedger project image asset exists")
 require(not (ROOT / "assets/renaldy-baskara.jpg").exists(), "portrait asset removed")
 for local_ref in ("assets/styles.css", "assets/main.js"):
     require((ROOT / local_ref).exists(), f"local asset exists: {local_ref}")
