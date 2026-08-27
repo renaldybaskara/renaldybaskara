@@ -2,6 +2,10 @@
 __pycache__/
 *.py[cod]
 
+# Local Codex design and isolated implementation workspaces
+.superpowers/
+.worktrees/
+
 # Legacy/obsolete generated assets (the canonical CV is Muhammad_Renaldy_Baskara_CV.pdf)
 Renaldy_Baskara_CV.pdf
 assets/bri-logo.jpg
